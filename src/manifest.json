@@ -14,7 +14,8 @@
   },
   "permissions": [
     "storage",
-    "activeTabs"
+    "activeTabs",
+    "https://git.consdata.local/*"
   ],
   "background": {
     "scripts": ["background.js"]
