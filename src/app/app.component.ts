@@ -3,7 +3,7 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-      <h1>Connected to {{port.name}}</h1>
+      <app-comment-list></app-comment-list>
       <h2>Received {{receivedMessage}}</h2>
       <button (click)="sendMessage()">Send message to content script</button>
   `,
