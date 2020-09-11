@@ -6,10 +6,20 @@
   "browser_action": {
     "default_popup": "index.html"
   },
+  "externally_connectable": {
+    "ids": ["*"],
+    "matches": [
+      "https://google.com/*"
+    ]
+  },
   "permissions": [
     "storage",
+    "activeTabs",
     "https://git.consdata.local/*"
   ],
+  "background": {
+    "scripts": ["background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
