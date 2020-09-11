@@ -6,11 +6,29 @@
   "browser_action": {
     "default_popup": "index.html"
   },
-  "permissions": ["storage"],
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "run_at": "document_idle",
-    "js": ["contentScript.js"]
-  }]
-
+  "externally_connectable": {
+    "ids": ["*"],
+    "matches": [
+      "https://google.com/*"
+    ]
+  },
+  "permissions": [
+    "storage",
+    "activeTabs",
+    "https://git.consdata.local/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ]
 }

@@ -27,9 +27,11 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "src/contentScript.js"
+              "src/contentScript.js",
+              "src/background.js"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -94,6 +96,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []

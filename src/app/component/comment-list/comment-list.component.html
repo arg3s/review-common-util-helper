@@ -1,0 +1,7 @@
+<div class="comments-wrapper">
+  <div class="comments-header">Pull request [{{pullRequestId}}] w {{repoName}}: komentarze</div>
+  <div class="comments-single" *ngFor="let act of activities | async">
+    {{act.user.displayName}}: {{act.comment.text}}
+  </div>
+</div>
+
