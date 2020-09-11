@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BitbucketService} from '../../service/bitbucket.service';
-import {Value} from '../../model/bitbucket-activity-response';
+import {Activity} from '../../model/bitbucket-activity-response';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-comment-list',
@@ -9,22 +11,23 @@ import {Value} from '../../model/bitbucket-activity-response';
 })
 export class CommentListComponent implements OnInit {
 
-  comments: Value[];
+  activities: Observable<Activity[]>;
   repoName: string;
   project: string;
   pullRequestId: number;
 
   constructor(private bbService: BitbucketService) {
-    this.project = 'EXM';
-    this.repoName = 'eximee-pko-nnw-junior';
-    this.pullRequestId = 251;
+    this.project = 'BZA';
+    this.repoName = 'ib24-client';
+    this.pullRequestId = 7358;
   }
 
   ngOnInit(): void {
-    this.bbService.getPullRequestActivity(this.project, this.repoName, this.pullRequestId).subscribe(r => {
-      this.comments = r.values.filter(v => v.action === 'COMMENTED');
-      console.log(r.values);
-    });
+    this.activities = this.bbService
+      .getPullRequestActivity(this.project, this.repoName, this.pullRequestId)
+      .pipe(
+        map(response => response.values),
+        map(activities => activities.filter(single => single.action === 'COMMENTED')));
   }
 
 

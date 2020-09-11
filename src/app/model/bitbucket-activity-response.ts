@@ -2,11 +2,11 @@ export interface BbActivityResponse {
   size: number;
   limit: number;
   isLastPage: boolean;
-  values: Value[];
+  values: Activity[];
   start: number;
 }
 
-export interface Value {
+export interface Activity {
   id: number;
   createdDate: number;
   user: User;
