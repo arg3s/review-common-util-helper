@@ -32,3 +32,9 @@ new MutationObserver((mutations, observer) => {
     }
   }
 }).observe(document.body, {childList: true, subtree: true});
+
+
+chrome.runtime.onConnect.addListener((port) => {
+    port.postMessage(window.location.href)
+})
+

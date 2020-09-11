@@ -9,12 +9,11 @@
   "externally_connectable": {
     "ids": ["*"],
     "matches": [
-      "https://google.com/*"
+      "https://git.consdata.local/*"
     ]
   },
   "permissions": [
     "storage",
-    "activeTabs",
     "https://git.consdata.local/*"
   ],
   "background": {
@@ -23,7 +22,7 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "https://git.consdata.local/*"
       ],
       "run_at": "document_idle",
       "js": [
