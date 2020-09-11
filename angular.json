@@ -26,7 +26,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/contentScript.js"
             ],
             "styles": [
               "src/styles.scss"
@@ -125,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "review-common-util-helper"
+    }
+  },
+  "defaultProject": "review-common-util-helper",
+  "cli": {
+    "analytics": false
+  }
 }
