@@ -2,11 +2,12 @@
 @import '~@angular/material/theming';
 
 html, body {
-  min-height: 500px;
-  min-width: 750px
+  min-width: 750px;
+  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: lightgray;
 }

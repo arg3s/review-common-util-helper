@@ -4,8 +4,6 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@an
   selector: 'app-root',
   template: `
     <app-comment-list></app-comment-list>
-    <h2>Received {{receivedMessage}}</h2>
-    <button (click)="sendMessage()">Send message to content script</button>
   `,
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
