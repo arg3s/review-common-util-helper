@@ -1,20 +1,19 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   template: `
-      <app-comment-list></app-comment-list>
-      <h2>Received {{receivedMessage}}</h2>
-      <button (click)="sendMessage()">Send message to content script</button>
+    <app-comment-list></app-comment-list>
+    <h2>Received {{receivedMessage}}</h2>
+    <button (click)="sendMessage()">Send message to content script</button>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  title = 'review-common-util-helper';
   counter = 0;
   receivedMessage = '';
   port;
-
 
   constructor(private ref: ChangeDetectorRef) {
   }

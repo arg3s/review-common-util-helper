@@ -3,18 +3,22 @@ import {NgModule} from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
-import {CommentListComponent} from './component/comment-list/comment-list.component';
+import {CommentListComponent} from './comments/comment-list/comment-list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CommentSingleComponent } from './comments/comment-list/comment-single/comment-single.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentSingleComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

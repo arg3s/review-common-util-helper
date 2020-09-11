@@ -1,13 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {BitbucketService} from '../../service/bitbucket.service';
-import {Activity} from '../../model/bitbucket-activity-response';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {BitbucketService} from '../bitbucket/bitbucket.service';
+import {Activity} from '../comments-model';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-comment-list',
-  templateUrl: './comment-list.component.html',
-  styleUrls: ['./comment-list.component.scss']
+  template: `
+    <mat-card>
+      <mat-card-title>
+        Pull request [{{pullRequestId}}] w {{repoName}}
+      </mat-card-title>
+      <div class="comments-single" *ngFor="let activity of activities | async">
+        <app-comment-single [activity]="activity"></app-comment-single>
+      </div>
+    </mat-card>
+  `,
+  styleUrls: ['./comment-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommentListComponent implements OnInit {
 

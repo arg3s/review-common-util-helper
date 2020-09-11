@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {BbActivityResponse} from '../model/bitbucket-activity-response';
+import {BbActivityResponse} from '../comments-model';
 
 
 @Injectable({
