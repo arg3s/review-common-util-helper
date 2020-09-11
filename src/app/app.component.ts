@@ -6,6 +6,7 @@ import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
       <app-comment-list></app-comment-list>
       <h2>Received {{receivedMessage}}</h2>
       <button (click)="sendMessage()">Send message to content script</button>
+      <app-active-pr-list></app-active-pr-list>
   `,
   styleUrls: ['./app.component.scss']
 })

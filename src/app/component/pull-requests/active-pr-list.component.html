@@ -1,0 +1,11 @@
+<div class="active-pr-list-wrapper">
+  <ng-container *ngFor="let pr of pullRequests">
+    <ul>
+      <li *ngIf="pr.open">
+        <p>PROJEKT: {{pr.project}}, REPO: <b>{{pr.repo}}</b></p>
+        <a href="{{pr.url}}">{{pr.title}}</a><span> (author: {{pr.author}}, status: {{pr.status}})</span>
+      </li>
+    </ul>
+  </ng-container>
+</div>
+

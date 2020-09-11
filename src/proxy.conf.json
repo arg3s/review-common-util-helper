@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://git.consdata.local",
+    "pathRewrite": {"^/api": "/rest/api/1.0/"},
+    "secure": false
+  }
+}
